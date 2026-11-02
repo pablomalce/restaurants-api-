@@ -23,7 +23,7 @@ The code stops partway through the exercise and does not run as committed:
 - `RestaurantsController` has a syntax error in its `before_action` list (a missing comma), so the app fails to boot.
 - An `update` action exists, but there is no `update` route for it.
 - `show.json.jbuilder` and `render_error` contain typos (wrong block variable, `error` instead of `errors`, and a misspelled status).
-- The tests are generated stubs with no assertions.
+- The tests are generated stubs: the model, policy and channel tests are empty, and the one controller test calls a route helper (`api_v1_restaurants_index_url`) that the routes do not define.
 
 ## Status
 
