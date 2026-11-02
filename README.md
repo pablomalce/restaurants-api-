@@ -21,6 +21,7 @@ This was a Le Wagon coding bootcamp exercise, written in one day on 20 August 20
 The code stops partway through the exercise and does not run as committed:
 
 - `RestaurantsController` has a syntax error in its `before_action` list (a missing comma), so the app fails to boot.
+- Two migrations (`AddTokenToUser` and `AddTokenToUsers`) add the same `authentication_token` column and index to `users`, so `rails db:migrate` fails on a fresh database. `db/schema.rb` is stamped at the first of the two, so the second never ran.
 - An `update` action exists, but there is no `update` route for it.
 - `show.json.jbuilder` and `render_error` contain typos (wrong block variable, `error` instead of `errors`, and a misspelled status).
 - The tests are generated stubs: the model, policy and channel tests are empty, and the one controller test calls a route helper (`api_v1_restaurants_index_url`) that the routes do not define.
